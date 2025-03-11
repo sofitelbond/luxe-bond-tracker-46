@@ -3,7 +3,6 @@ import React from 'react';
 import { Layout } from '../components/Layout';
 import { Hero } from '../components/Hero';
 import { PaymentForm } from '../components/PaymentForm';
-import { StatusTracker } from '../components/StatusTracker';
 import { SupportSection } from '../components/SupportSection';
 import { LanguageProvider } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
@@ -29,7 +28,6 @@ const Index = () => {
           />
           
           <PaymentForm />
-          <StatusTracker />
           <SupportSection />
         </div>
       </Layout>
