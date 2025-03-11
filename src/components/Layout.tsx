@@ -14,7 +14,7 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       <header className="py-6 px-8 md:px-12 flex justify-between items-center w-full fixed top-0 z-50 glass">
         <div className="flex items-center">
           <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Sofitel_logo.svg" 
+            src="/lovable-uploads/afc48660-343a-4768-b1d1-ae7da1715520.png" 
             alt="Sofitel Logo" 
             className="h-8 mr-4"
           />
