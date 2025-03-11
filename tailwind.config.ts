@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				sofitel: {
+					navy: '#0F2C52',
+					gold: '#D4AF37',
+					cream: '#F8F6F0',
+					charcoal: '#333333',
+					light: '#F9F9F9'
 				}
 			},
 			borderRadius: {
@@ -70,25 +78,50 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'fade-in': {
+					from: { opacity: '0' },
+					to: { opacity: '1' }
+				},
+				'fade-in-up': {
+					from: { opacity: '0', transform: 'translateY(20px)' },
+					to: { opacity: '1', transform: 'translateY(0)' }
+				},
+				'slide-in-right': {
+					from: { transform: 'translateX(100%)' },
+					to: { transform: 'translateX(0)' }
+				},
+				'reveal-left': {
+					from: { transform: 'scaleX(0)', transformOrigin: 'left' },
+					to: { transform: 'scaleX(1)', transformOrigin: 'left' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.7s ease-out',
+				'fade-in-up': 'fade-in-up 0.7s ease-out',
+				'slide-in-right': 'slide-in-right 0.5s ease-out',
+				'reveal-left': 'reveal-left 0.7s ease-out'
+			},
+			fontFamily: {
+				sans: ['SF Pro Display', 'Avenir', 'system-ui', 'sans-serif'],
+				serif: ['Georgia', 'serif']
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'hero-pattern': "url('/src/assets/hero-bg.jpg')"
+			},
+			boxShadow: {
+				'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',
+				'medium': '0 8px 30px rgba(0, 0, 0, 0.08)',
+				'card': '0 10px 30px rgba(0, 0, 0, 0.04)'
 			}
 		}
 	},
