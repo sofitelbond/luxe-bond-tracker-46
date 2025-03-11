@@ -11,6 +11,9 @@ export const AboutBondSection: React.FC = () => {
           The €1,000 employment guarantee bond is fully refundable upon successful completion of your contract 
           with Sofitel Frankfurt Opera or if your application is unsuccessful.
         </p>
+        <p className="text-sm text-sofitel-charcoal/80 mb-4">
+          You can choose to pay the full amount of €1,000 or make a partial payment of €500.
+        </p>
         <p className="text-sm text-sofitel-charcoal/80">
           This bond serves as a commitment to your employment and helps us ensure that candidates 
           who receive job offers are serious about their intention to join our team.
@@ -31,3 +34,4 @@ export const AboutBondSection: React.FC = () => {
     </>
   );
 };
+

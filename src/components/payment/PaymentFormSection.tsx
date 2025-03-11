@@ -12,6 +12,7 @@ export const PaymentFormSection: React.FC = () => {
     phoneNumber: '',
     provider: 'mtn',
     name: '',
+    amount: '1000', // Default to full payment
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -35,7 +36,7 @@ export const PaymentFormSection: React.FC = () => {
       setIsProcessing(false);
       toast({
         title: "Payment Request Sent",
-        description: `Your mobile money payment request has been sent to ${formData.phoneNumber}. Please check your phone to complete the transaction.`,
+        description: `Your mobile money payment request of €${formData.amount} has been sent to ${formData.phoneNumber}. Please check your phone to complete the transaction.`,
       });
       
       // Reset form
@@ -43,6 +44,7 @@ export const PaymentFormSection: React.FC = () => {
         phoneNumber: '',
         provider: 'mtn',
         name: '',
+        amount: '1000',
       });
     }, 2000);
   };
@@ -63,13 +65,19 @@ export const PaymentFormSection: React.FC = () => {
           <label htmlFor="amount" className="block text-sm font-medium text-sofitel-charcoal">
             {t('amount')}
           </label>
-          <input
-            type="text"
+          <select
             id="amount"
-            value={`${t('currencyEuro')}${t('bondAmount')}`}
-            disabled
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-sofitel-light text-sofitel-navy font-medium"
-          />
+            name="amount"
+            value={formData.amount}
+            onChange={handleChange}
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sofitel-navy/30 focus:border-sofitel-navy transition-all"
+          >
+            <option value="500">€500 (Partial Payment)</option>
+            <option value="1000">€1000 (Full Payment)</option>
+          </select>
+          <p className="text-xs text-sofitel-charcoal/60 mt-1">
+            You can make a partial payment of €500 or the full amount of €1000.
+          </p>
         </div>
         
         <div className="space-y-2">
@@ -155,3 +163,4 @@ export const PaymentFormSection: React.FC = () => {
     </div>
   );
 };
+

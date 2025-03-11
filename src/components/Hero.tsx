@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
             
             <p className="text-lg text-sofitel-charcoal/80 max-w-xl">
               Welcome to Sofitel Frankfurt Opera's secure employment guarantee bond portal. 
-              Process your refundable €1,000 bond payment easily.
+              Process your employment bond payment of €500 (partial) or €1,000 (full) easily via mobile money.
             </p>
             
             <div className="flex flex-wrap gap-3 items-center">
@@ -74,7 +74,10 @@ export const Hero: React.FC = () => {
               <div className="space-y-6">
                 <div className="flex justify-between items-center pb-4 border-b border-gray-100">
                   <span className="text-sofitel-charcoal/70">{t('amount')}</span>
-                  <span className="text-2xl font-semibold text-sofitel-navy">{t('currencyEuro')}{t('bondAmount')}</span>
+                  <div className="text-right">
+                    <div className="text-2xl font-semibold text-sofitel-navy">{t('currencyEuro')}{t('bondAmount')}</div>
+                    <div className="text-sm text-sofitel-charcoal/70">or {t('currencyEuro')}500 (partial)</div>
+                  </div>
                 </div>
                 
                 <div className="space-y-3">
@@ -83,8 +86,8 @@ export const Hero: React.FC = () => {
                       <span className="text-sofitel-navy font-medium">1</span>
                     </div>
                     <div>
-                      <h4 className="font-medium text-sofitel-navy">Make a secure payment</h4>
-                      <p className="text-sm text-sofitel-charcoal/70">Process your employment guarantee bond through our secure payment gateway.</p>
+                      <h4 className="font-medium text-sofitel-navy">Choose payment amount</h4>
+                      <p className="text-sm text-sofitel-charcoal/70">Select either a partial (€500) or full (€1,000) payment option.</p>
                     </div>
                   </div>
                   
@@ -93,8 +96,8 @@ export const Hero: React.FC = () => {
                       <span className="text-sofitel-navy font-medium">2</span>
                     </div>
                     <div>
-                      <h4 className="font-medium text-sofitel-navy">Receive confirmation</h4>
-                      <p className="text-sm text-sofitel-charcoal/70">Get immediate confirmation of your payment via email.</p>
+                      <h4 className="font-medium text-sofitel-navy">Make a secure payment</h4>
+                      <p className="text-sm text-sofitel-charcoal/70">Process your employment guarantee bond through our secure mobile money gateway.</p>
                     </div>
                   </div>
                   
@@ -103,8 +106,8 @@ export const Hero: React.FC = () => {
                       <span className="text-sofitel-navy font-medium">3</span>
                     </div>
                     <div>
-                      <h4 className="font-medium text-sofitel-navy">Start your journey</h4>
-                      <p className="text-sm text-sofitel-charcoal/70">Once processed, your employment journey with Sofitel begins.</p>
+                      <h4 className="font-medium text-sofitel-navy">Receive confirmation</h4>
+                      <p className="text-sm text-sofitel-charcoal/70">Get immediate confirmation of your payment via email.</p>
                     </div>
                   </div>
                 </div>
@@ -120,3 +123,4 @@ export const Hero: React.FC = () => {
     </section>
   );
 };
+
