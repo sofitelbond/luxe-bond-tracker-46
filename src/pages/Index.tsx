@@ -7,8 +7,11 @@ import { SupportSection } from '../components/SupportSection';
 import { LanguageProvider } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { Toaster } from "@/components/ui/toaster";
+import { useAuth } from '../contexts/AuthContext';
 
 const Index = () => {
+  const { user } = useAuth();
+
   return (
     <LanguageProvider>
       <Layout>

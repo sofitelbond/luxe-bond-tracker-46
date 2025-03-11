@@ -1,38 +1,60 @@
 
-import React, { ReactNode } from 'react';
+import React from 'react';
 import { LanguageSelector } from './LanguageSelector';
 import { Footer } from './Footer';
-import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface LayoutProps {
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const { user, signOut } = useAuth();
+  const { t } = useLanguage();
+  
   return (
-    <div className="min-h-screen flex flex-col bg-sofitel-light">
-      <header className="py-6 px-8 md:px-12 flex justify-between items-center w-full fixed top-0 z-50 glass">
-        <div className="flex items-center">
-          <img 
-            src="/lovable-uploads/afc48660-343a-4768-b1d1-ae7da1715520.png" 
-            alt="Sofitel Logo" 
-            className="h-8 mr-4"
-          />
-          <h1 className="text-xl font-semibold text-sofitel-navy hidden md:block">
-            Frankfurt Opera
-          </h1>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
+      <header className="bg-white shadow-sm">
+        <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/lovable-uploads/33e57c76-9e15-49bd-b6de-19edb216faad.png" 
+              alt="Sofitel Logo" 
+              className="h-10 w-auto" 
+            />
+            <span className="ml-2 text-xl font-semibold text-sofitel-navy">Frankfurt Opera</span>
+          </Link>
+          <div className="flex items-center space-x-4">
+            <LanguageSelector />
+            {user ? (
+              <div className="flex items-center space-x-3">
+                <span className="text-sm text-gray-600">
+                  {user.email}
+                </span>
+                <button 
+                  onClick={() => signOut()}
+                  className="text-sofitel-navy hover:text-sofitel-gold transition-colors text-sm"
+                >
+                  {t('logout')}
+                </button>
+              </div>
+            ) : (
+              <Link 
+                to="/auth" 
+                className="px-4 py-2 rounded-md bg-sofitel-gold text-white hover:bg-sofitel-gold/90 transition-colors text-sm"
+              >
+                {t('signIn')}
+              </Link>
+            )}
+          </div>
         </div>
-        <LanguageSelector />
       </header>
       
-      <motion.main 
-        className="flex-grow pt-24 pb-16"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      <main>
         {children}
-      </motion.main>
+      </main>
       
       <Footer />
     </div>
