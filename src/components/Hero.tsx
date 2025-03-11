@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
             
             <p className="text-lg text-sofitel-charcoal/80 max-w-xl">
               Welcome to Sofitel Frankfurt Opera's secure employment guarantee bond portal. 
-              Process your refundable €1,000 bond payment and track your application status easily.
+              Process your refundable €1,000 bond payment easily.
             </p>
             
             <div className="flex flex-wrap gap-3 items-center">
@@ -52,15 +52,6 @@ export const Hero: React.FC = () => {
               >
                 <span>{t('paymentButton')}</span>
                 <ArrowRight size={16} />
-              </motion.a>
-              
-              <motion.a
-                href="#track"
-                className="px-6 py-3 bg-white text-sofitel-navy rounded-lg font-medium flex items-center space-x-2 shadow-md hover:shadow-lg transform transition-all hover:-translate-y-1"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-              >
-                <span>{t('trackButton')}</span>
               </motion.a>
             </div>
             
@@ -102,8 +93,8 @@ export const Hero: React.FC = () => {
                       <span className="text-sofitel-navy font-medium">2</span>
                     </div>
                     <div>
-                      <h4 className="font-medium text-sofitel-navy">Track your application</h4>
-                      <p className="text-sm text-sofitel-charcoal/70">Follow your application progress and payment status in real-time.</p>
+                      <h4 className="font-medium text-sofitel-navy">Receive confirmation</h4>
+                      <p className="text-sm text-sofitel-charcoal/70">Get immediate confirmation of your payment via email.</p>
                     </div>
                   </div>
                   
