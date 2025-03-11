@@ -3,10 +3,12 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { Mail, Phone, Globe, ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+
 interface FAQ {
   question: string;
   answer: string;
 }
+
 const faqs: FAQ[] = [{
   question: "What is the employment guarantee bond?",
   answer: "The employment guarantee bond is a refundable deposit of €1,000 that candidates pay to secure their position at Sofitel Frankfurt Opera. It demonstrates your commitment to the role and will be fully refunded upon successful completion of your contract or if your application is unsuccessful."
@@ -29,6 +31,7 @@ const faqs: FAQ[] = [{
   question: "Is my payment information secure?",
   answer: "Yes, we take security very seriously. All payment information is encrypted using industry-standard SSL/TLS technology. We are PCI DSS compliant and do not store your full credit card details on our servers. Your personal data is handled in accordance with GDPR regulations."
 }];
+
 export const SupportSection: React.FC = () => {
   const {
     t
@@ -40,9 +43,11 @@ export const SupportSection: React.FC = () => {
     phone: '',
     message: ''
   });
+
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
   };
+
   const handleContactChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const {
       name,
@@ -53,6 +58,7 @@ export const SupportSection: React.FC = () => {
       [name]: value
     }));
   };
+
   const handleContactSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
@@ -60,7 +66,6 @@ export const SupportSection: React.FC = () => {
       description: "We've received your message and will respond shortly."
     });
 
-    // Reset form
     setContactForm({
       name: '',
       email: '',
@@ -68,6 +73,7 @@ export const SupportSection: React.FC = () => {
       message: ''
     });
   };
+
   return <section id="support" className="py-20 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-8 md:px-12">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -223,8 +229,8 @@ export const SupportSection: React.FC = () => {
                   <Phone size={20} className="text-sofitel-gold flex-shrink-0 mt-0.5" />
                   <div>
                     <h5 className="font-medium text-sofitel-charcoal">Phone</h5>
-                    <a href="tel:+4969256695" className="text-sm text-sofitel-navy hover:underline">
-                      +49 69 256695 0
+                    <a href="tel:+4915210755346" className="text-sm text-sofitel-navy hover:underline">
+                      +49 1521 0755346
                     </a>
                   </div>
                 </li>
