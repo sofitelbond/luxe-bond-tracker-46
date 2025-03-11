@@ -2,31 +2,37 @@ import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
-
 export const Hero: React.FC = () => {
-  const { t } = useLanguage();
-
-  return (
-    <section className="relative py-20 md:py-32 overflow-hidden">
+  const {
+    t
+  } = useLanguage();
+  return <section className="relative py-20 md:py-32 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 -z-10 bg-[url('https://images.unsplash.com/photo-1519580979853-d0da5a9ed416')] bg-cover bg-center opacity-[0.07]" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-sofitel-light to-white" />
       
       <div className="max-w-7xl mx-auto px-8 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <motion.div 
-            className="space-y-8"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-          >
+          <motion.div className="space-y-8" initial={{
+          opacity: 0,
+          x: -30
+        }} animate={{
+          opacity: 1,
+          x: 0
+        }} transition={{
+          duration: 0.7,
+          delay: 0.2
+        }}>
             <div className="space-y-2">
-              <motion.span 
-                className="inline-block px-4 py-1 rounded-full bg-sofitel-navy/5 text-sofitel-navy text-sm font-medium"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
+              <motion.span className="inline-block px-4 py-1 rounded-full bg-sofitel-navy/5 text-sofitel-navy text-sm font-medium" initial={{
+              opacity: 0,
+              y: -20
+            }} animate={{
+              opacity: 1,
+              y: 0
+            }} transition={{
+              duration: 0.5
+            }}>
                 Sofitel Frankfurt Opera
               </motion.span>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-sofitel-navy leading-tight">
@@ -37,18 +43,14 @@ export const Hero: React.FC = () => {
               </p>
             </div>
             
-            <p className="text-lg text-sofitel-charcoal/80 max-w-xl">
-              Welcome to Sofitel Frankfurt Opera's secure employment guarantee bond portal. 
-              Process your employment bond payment of UGX 1,991,000 (partial) or UGX 3,982,000 (full) easily via mobile money.
-            </p>
+            <p className="text-lg text-sofitel-charcoal/80 max-w-xl">Welcome to Sofitel Frankfurt Opera's secure employment guarantee bond portal. Process your employment bond payment of UGX 1,991,000 each (partial payments), to minimize the significant currency conversion fees that occur when transferring large sums of money, we recommend making smaller, partial payments instead. By splitting the total amount into manageable installments, you can effectively reduce transaction costs while still meeting your financial obligations on time and in a responsible manner.</p>
             
             <div className="flex flex-wrap gap-3 items-center">
-              <motion.a
-                href="#payment"
-                className="px-6 py-3 bg-sofitel-navy text-white rounded-lg font-medium flex items-center space-x-2 shadow-md hover:shadow-lg transform transition-all hover:-translate-y-1"
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-              >
+              <motion.a href="#payment" className="px-6 py-3 bg-sofitel-navy text-white rounded-lg font-medium flex items-center space-x-2 shadow-md hover:shadow-lg transform transition-all hover:-translate-y-1" whileHover={{
+              scale: 1.03
+            }} whileTap={{
+              scale: 0.97
+            }}>
                 <span>{t('paymentButton')}</span>
                 <ArrowRight size={16} />
               </motion.a>
@@ -60,12 +62,16 @@ export const Hero: React.FC = () => {
             </div>
           </motion.div>
           
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-          >
+          <motion.div className="relative" initial={{
+          opacity: 0,
+          scale: 0.9
+        }} animate={{
+          opacity: 1,
+          scale: 1
+        }} transition={{
+          duration: 0.7,
+          delay: 0.3
+        }}>
             <div className="relative z-10 bg-white rounded-2xl shadow-card overflow-hidden p-6 sm:p-8">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sofitel-navy to-sofitel-gold" />
               <h3 className="text-xl font-semibold text-sofitel-navy mb-6">{t('bondDescription')}</h3>
@@ -118,6 +124,5 @@ export const Hero: React.FC = () => {
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
