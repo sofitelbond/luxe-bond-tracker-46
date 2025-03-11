@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../contexts/language';
 import { motion } from 'framer-motion';
 import { Mail, Phone, Globe, ChevronDown, ChevronUp, HelpCircle } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
@@ -33,9 +33,7 @@ const faqs: FAQ[] = [{
 }];
 
 export const SupportSection: React.FC = () => {
-  const {
-    t
-  } = useLanguage();
+  const { t } = useLanguage();
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [contactForm, setContactForm] = useState({
     name: '',

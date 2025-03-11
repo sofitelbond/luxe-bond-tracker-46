@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../contexts/language';
 import { motion } from 'framer-motion';
 import { Search, Check, Clock, XCircle, ArrowRight } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';

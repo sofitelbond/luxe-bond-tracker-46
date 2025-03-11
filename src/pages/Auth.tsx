@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { Layout } from '../components/Layout';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../contexts/language';
 import { motion } from 'framer-motion';
 import { Navigate } from 'react-router-dom';
 import { useToast } from "@/hooks/use-toast";

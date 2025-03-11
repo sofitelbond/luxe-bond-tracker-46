@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../contexts/language';
 import { motion } from 'framer-motion';
 import { PaymentFormSection } from './payment/PaymentFormSection';
 import { SecurityInfoSection } from './payment/SecurityInfoSection';
