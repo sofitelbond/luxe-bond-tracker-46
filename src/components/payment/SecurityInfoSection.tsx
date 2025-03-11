@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Shield, Wallet } from 'lucide-react';
 
@@ -27,7 +26,7 @@ export const SecurityInfoSection: React.FC = () => {
           <Wallet size={20} className="text-sofitel-gold flex-shrink-0 mt-0.5" />
           <div>
             <h5 className="font-medium text-sofitel-charcoal">Flexible Payment Options</h5>
-            <p className="text-sm text-sofitel-charcoal/70">Choose between partial (€500) or full (€1,000) payment based on your preference.</p>
+            <p className="text-sm text-sofitel-charcoal/70">Choose between partial (UGX 1,991,000) or full (UGX 3,982,000) payment based on your preference.</p>
           </div>
         </li>
         
@@ -42,4 +41,3 @@ export const SecurityInfoSection: React.FC = () => {
     </div>
   );
 };
-

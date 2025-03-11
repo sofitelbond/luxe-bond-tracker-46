@@ -13,7 +13,7 @@ export const PaymentFormSection: React.FC = () => {
     phoneNumber: '',
     provider: 'mtn',
     name: '',
-    amount: '2000000', // Default to full payment
+    amount: '3982000', // Default to full payment
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -58,7 +58,7 @@ export const PaymentFormSection: React.FC = () => {
         phoneNumber: '',
         provider: 'mtn',
         name: '',
-        amount: '2000000',
+        amount: '3982000',
       });
     } catch (error) {
       console.error('Payment error:', error);
@@ -95,11 +95,11 @@ export const PaymentFormSection: React.FC = () => {
             onChange={handleChange}
             className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sofitel-navy/30 focus:border-sofitel-navy transition-all"
           >
-            <option value="1000000">UGX 1,000,000 (Partial Payment)</option>
-            <option value="2000000">UGX 2,000,000 (Full Payment)</option>
+            <option value="1991000">UGX 1,991,000 (Partial Payment)</option>
+            <option value="3982000">UGX 3,982,000 (Full Payment)</option>
           </select>
           <p className="text-xs text-sofitel-charcoal/60 mt-1">
-            You can make a partial payment of UGX 1,000,000 or the full amount of UGX 2,000,000.
+            You can make a partial payment of UGX 1,991,000 or the full amount of UGX 3,982,000.
           </p>
         </div>
         

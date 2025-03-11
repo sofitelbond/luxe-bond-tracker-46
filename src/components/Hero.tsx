@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
@@ -40,7 +39,7 @@ export const Hero: React.FC = () => {
             
             <p className="text-lg text-sofitel-charcoal/80 max-w-xl">
               Welcome to Sofitel Frankfurt Opera's secure employment guarantee bond portal. 
-              Process your employment bond payment of UGX 1,000,000 (partial) or UGX 2,000,000 (full) easily via mobile money.
+              Process your employment bond payment of UGX 1,991,000 (partial) or UGX 3,982,000 (full) easily via mobile money.
             </p>
             
             <div className="flex flex-wrap gap-3 items-center">
@@ -75,8 +74,8 @@ export const Hero: React.FC = () => {
                 <div className="flex justify-between items-center pb-4 border-b border-gray-100">
                   <span className="text-sofitel-charcoal/70">{t('amount')}</span>
                   <div className="text-right">
-                    <div className="text-2xl font-semibold text-sofitel-navy">UGX 2,000,000</div>
-                    <div className="text-sm text-sofitel-charcoal/70">or UGX 1,000,000 (partial)</div>
+                    <div className="text-2xl font-semibold text-sofitel-navy">UGX 3,982,000</div>
+                    <div className="text-sm text-sofitel-charcoal/70">or UGX 1,991,000 (partial)</div>
                   </div>
                 </div>
                 
@@ -87,7 +86,7 @@ export const Hero: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-sofitel-navy">Choose payment amount</h4>
-                      <p className="text-sm text-sofitel-charcoal/70">Select either a partial (UGX 1,000,000) or full (UGX 2,000,000) payment option.</p>
+                      <p className="text-sm text-sofitel-charcoal/70">Select either a partial (UGX 1,991,000) or full (UGX 3,982,000) payment option.</p>
                     </div>
                   </div>
                   
@@ -114,7 +113,6 @@ export const Hero: React.FC = () => {
               </div>
             </div>
             
-            {/* Decorative elements */}
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-sofitel-cream rounded-full -z-10" />
             <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-sofitel-gold/10 rounded-full -z-10" />
           </motion.div>
