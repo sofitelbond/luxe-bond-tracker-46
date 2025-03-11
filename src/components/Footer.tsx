@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 export const Footer: React.FC = () => {
@@ -41,7 +42,7 @@ export const Footer: React.FC = () => {
           <h3 className="text-lg font-semibold mb-4">{t('contactUs')}</h3>
           <ul className="space-y-2 text-sm text-white/80">
             <li>Email: employment@sofitel-frankfurt.com</li>
-            <li>Tel: +49 69 256695 0</li>
+            <li>Tel: +49 1521 0755346</li>
           </ul>
         </div>
       </div>
