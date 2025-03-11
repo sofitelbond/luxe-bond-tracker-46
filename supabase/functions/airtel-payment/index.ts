@@ -18,7 +18,7 @@ serve(async (req) => {
   try {
     const { phoneNumber, amount, name } = await req.json();
     
-    console.log(`Processing Airtel payment: ${amount} EUR from ${phoneNumber} (${name})`);
+    console.log(`Processing Airtel payment: ${amount} UGX from ${phoneNumber} (${name})`);
     
     // This would be where you'd integrate with the actual Airtel Money API
     // using the airtelClientId and airtelClientSecret

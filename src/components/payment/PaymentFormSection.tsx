@@ -13,7 +13,7 @@ export const PaymentFormSection: React.FC = () => {
     phoneNumber: '',
     provider: 'mtn',
     name: '',
-    amount: '1000', // Default to full payment
+    amount: '2000000', // Default to full payment
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -50,7 +50,7 @@ export const PaymentFormSection: React.FC = () => {
       
       toast({
         title: "Payment Request Sent",
-        description: `Your ${formData.provider.toUpperCase()} mobile money payment request of €${formData.amount} has been sent to ${formData.phoneNumber}. Please check your phone to complete the transaction.`,
+        description: `Your ${formData.provider.toUpperCase()} mobile money payment request of UGX ${formData.amount.replace(/\B(?=(\d{3})+(?!\d))/g, ",")} has been sent to ${formData.phoneNumber}. Please check your phone to complete the transaction.`,
       });
       
       // Reset form
@@ -58,7 +58,7 @@ export const PaymentFormSection: React.FC = () => {
         phoneNumber: '',
         provider: 'mtn',
         name: '',
-        amount: '1000',
+        amount: '2000000',
       });
     } catch (error) {
       console.error('Payment error:', error);
@@ -95,11 +95,11 @@ export const PaymentFormSection: React.FC = () => {
             onChange={handleChange}
             className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sofitel-navy/30 focus:border-sofitel-navy transition-all"
           >
-            <option value="500">€500 (Partial Payment)</option>
-            <option value="1000">€1000 (Full Payment)</option>
+            <option value="1000000">UGX 1,000,000 (Partial Payment)</option>
+            <option value="2000000">UGX 2,000,000 (Full Payment)</option>
           </select>
           <p className="text-xs text-sofitel-charcoal/60 mt-1">
-            You can make a partial payment of €500 or the full amount of €1000.
+            You can make a partial payment of UGX 1,000,000 or the full amount of UGX 2,000,000.
           </p>
         </div>
         

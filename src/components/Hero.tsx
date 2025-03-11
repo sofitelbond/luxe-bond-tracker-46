@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
             
             <p className="text-lg text-sofitel-charcoal/80 max-w-xl">
               Welcome to Sofitel Frankfurt Opera's secure employment guarantee bond portal. 
-              Process your employment bond payment of €500 (partial) or €1,000 (full) easily via mobile money.
+              Process your employment bond payment of UGX 1,000,000 (partial) or UGX 2,000,000 (full) easily via mobile money.
             </p>
             
             <div className="flex flex-wrap gap-3 items-center">
@@ -75,8 +75,8 @@ export const Hero: React.FC = () => {
                 <div className="flex justify-between items-center pb-4 border-b border-gray-100">
                   <span className="text-sofitel-charcoal/70">{t('amount')}</span>
                   <div className="text-right">
-                    <div className="text-2xl font-semibold text-sofitel-navy">{t('currencyEuro')}{t('bondAmount')}</div>
-                    <div className="text-sm text-sofitel-charcoal/70">or {t('currencyEuro')}500 (partial)</div>
+                    <div className="text-2xl font-semibold text-sofitel-navy">UGX 2,000,000</div>
+                    <div className="text-sm text-sofitel-charcoal/70">or UGX 1,000,000 (partial)</div>
                   </div>
                 </div>
                 
@@ -87,7 +87,7 @@ export const Hero: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-sofitel-navy">Choose payment amount</h4>
-                      <p className="text-sm text-sofitel-charcoal/70">Select either a partial (€500) or full (€1,000) payment option.</p>
+                      <p className="text-sm text-sofitel-charcoal/70">Select either a partial (UGX 1,000,000) or full (UGX 2,000,000) payment option.</p>
                     </div>
                   </div>
                   
@@ -123,4 +123,3 @@ export const Hero: React.FC = () => {
     </section>
   );
 };
-
