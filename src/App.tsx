@@ -7,6 +7,7 @@ import NotFound from './pages/NotFound';
 import { AuthProvider } from './contexts/AuthContext';
 import { LanguageProvider } from './contexts/language/LanguageContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
+import { Toaster } from './components/ui/toaster';
 import './App.css';
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
               }
             />
           </Routes>
+          <Toaster />
         </AuthProvider>
       </LanguageProvider>
     </BrowserRouter>
