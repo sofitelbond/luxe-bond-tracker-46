@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { LanguageSelector } from './LanguageSelector';
 import { Footer } from './Footer';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { useLanguage } from '../contexts/LanguageContext';
+import { useLanguage } from '../contexts/language';
 
 interface LayoutProps {
   children: React.ReactNode;

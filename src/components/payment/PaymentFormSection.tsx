@@ -1,12 +1,14 @@
 import React from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useLanguage } from '../../contexts/language';
 import { motion } from 'framer-motion';
 import { ExternalLink, ArrowRight } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+
 export const PaymentFormSection: React.FC = () => {
   const {
     t
   } = useLanguage();
+
   const handlePartialPaymentClick = () => {
     // Open the payment link in a new tab
     window.open('https://simpleswap.io/exchange?id=q6ona2v83j60u8bp', '_blank');
@@ -17,6 +19,7 @@ export const PaymentFormSection: React.FC = () => {
       description: "You're being redirected to our secure payment partner to make the €500 partial payment."
     });
   };
+
   return <div className="bg-white p-8 rounded-2xl shadow-card relative border border-gray-100">
       <div className="absolute top-0 left-0 w-full h-1 bg-sofitel-gold rounded-t-2xl" />
       

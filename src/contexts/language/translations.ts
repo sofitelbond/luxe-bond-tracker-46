@@ -1,14 +1,6 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import { Language } from './types';
 
-type Language = 'en' | 'fr' | 'de' | 'es' | 'zh';
-
-interface LanguageContextType {
-  language: Language;
-  setLanguage: (language: Language) => void;
-  t: (key: string) => string;
-}
-
-const translations: Record<Language, Record<string, string>> = {
+export const translations: Record<Language, Record<string, string>> = {
   en: {
     welcomeTitle: 'Sofitel Frankfurt Opera Employment Bond',
     welcomeSubtitle: 'Your Journey to Excellence Starts Here',
@@ -249,28 +241,4 @@ const translations: Record<Language, Record<string, string>> = {
     logout: "登出",
     profile: "个人资料",
   }
-};
-
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
-
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [language, setLanguage] = useState<Language>('en');
-
-  const t = (key: string): string => {
-    return translations[language][key] || key;
-  };
-
-  return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
-      {children}
-    </LanguageContext.Provider>
-  );
-};
-
-export const useLanguage = (): LanguageContextType => {
-  const context = useContext(LanguageContext);
-  if (context === undefined) {
-    throw new Error('useLanguage must be used within a LanguageProvider');
-  }
-  return context;
 };

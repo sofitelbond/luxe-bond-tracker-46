@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { Layout } from '../components/Layout';
 import { Hero } from '../components/Hero';
 import { PaymentForm } from '../components/PaymentForm';
 import { SupportSection } from '../components/SupportSection';
-import { LanguageProvider } from '../contexts/LanguageContext';
+import { LanguageProvider } from '../contexts/language';
 import { motion } from 'framer-motion';
 import { Toaster } from "@/components/ui/toaster";
 import { useAuth } from '../contexts/AuthContext';
