@@ -153,37 +153,6 @@ export const SupportSection: React.FC = () => {
                 </div>
               </div>
             </div>
-            
-            <div className="bg-sofitel-cream p-6 rounded-xl">
-              <h4 className="text-lg font-medium text-sofitel-navy mb-3">Additional Resources</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <a 
-                  href="#" 
-                  className="flex items-center p-4 bg-white rounded-lg shadow-soft hover:shadow-medium transition-all"
-                >
-                  <div className="w-10 h-10 bg-sofitel-navy/10 rounded-full flex items-center justify-center mr-3">
-                    <Globe size={20} className="text-sofitel-navy" />
-                  </div>
-                  <div>
-                    <h5 className="font-medium text-sofitel-navy">Visa Information</h5>
-                    <p className="text-xs text-sofitel-charcoal/70">Learn about German work visas</p>
-                  </div>
-                </a>
-                
-                <a 
-                  href="#" 
-                  className="flex items-center p-4 bg-white rounded-lg shadow-soft hover:shadow-medium transition-all"
-                >
-                  <div className="w-10 h-10 bg-sofitel-navy/10 rounded-full flex items-center justify-center mr-3">
-                    <Globe size={20} className="text-sofitel-navy" />
-                  </div>
-                  <div>
-                    <h5 className="font-medium text-sofitel-navy">Career Guide</h5>
-                    <p className="text-xs text-sofitel-charcoal/70">Employment guide & benefits</p>
-                  </div>
-                </a>
-              </div>
-            </div>
           </motion.div>
           
           <motion.div 
