@@ -92,7 +92,7 @@ export const Hero: React.FC = () => {
                     </div>
                     <div>
                       <h4 className="font-medium text-sofitel-navy">Choose payment amount</h4>
-                      <p className="text-sm text-sofitel-charcoal/70">Select either a partial (UGX 1,991,000) or full (UGX 3,982,000) payment option.</p>
+                      <p className="text-sm text-sofitel-charcoal/70">Please proceed with making the payment in partial installments to facilitate the process.</p>
                     </div>
                   </div>
                   
