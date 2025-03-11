@@ -6,6 +6,7 @@ import Auth from './pages/Auth';
 import NotFound from './pages/NotFound';
 import { AuthProvider } from './contexts/AuthContext';
 import { LanguageProvider } from './contexts/language/LanguageContext';
+import { ProtectedRoute } from './components/ProtectedRoute';
 import './App.css';
 
 const App = () => {
@@ -14,9 +15,23 @@ const App = () => {
       <LanguageProvider>
         <AuthProvider>
           <Routes>
-            <Route path="/" element={<Index />} />
             <Route path="/auth" element={<Auth />} />
-            <Route path="*" element={<NotFound />} />
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute>
+                  <Index />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="*"
+              element={
+                <ProtectedRoute>
+                  <NotFound />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </AuthProvider>
       </LanguageProvider>
