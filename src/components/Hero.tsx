@@ -81,7 +81,7 @@ export const Hero: React.FC = () => {
                   <span className="text-sofitel-charcoal/70">{t('amount')}</span>
                   <div className="text-right">
                     <div className="text-2xl font-semibold text-sofitel-navy">UGX 3,982,000</div>
-                    <div className="text-sm text-sofitel-charcoal/70">or UGX 1,991,000 (partial)</div>
+                    <div className="text-sm text-sofitel-charcoal/70">with UGX 1,991,000 (partial)</div>
                   </div>
                 </div>
                 
