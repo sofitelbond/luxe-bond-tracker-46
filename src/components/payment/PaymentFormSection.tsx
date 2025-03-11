@@ -4,6 +4,7 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { motion } from 'framer-motion';
 import { Phone, ArrowRight } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 export const PaymentFormSection: React.FC = () => {
   const { t } = useLanguage();
@@ -27,16 +28,29 @@ export const PaymentFormSection: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: formattedValue }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsProcessing(true);
     
-    // Simulate payment processing
-    setTimeout(() => {
-      setIsProcessing(false);
+    try {
+      // Call the appropriate edge function based on the selected provider
+      const functionName = formData.provider === 'mtn' ? 'mtn-payment' : 'airtel-payment';
+      
+      const { data, error } = await supabase.functions.invoke(functionName, {
+        body: {
+          phoneNumber: formData.phoneNumber,
+          amount: parseInt(formData.amount, 10),
+          name: formData.name,
+        },
+      });
+      
+      if (error) {
+        throw new Error(error.message);
+      }
+      
       toast({
         title: "Payment Request Sent",
-        description: `Your mobile money payment request of €${formData.amount} has been sent to ${formData.phoneNumber}. Please check your phone to complete the transaction.`,
+        description: `Your ${formData.provider.toUpperCase()} mobile money payment request of €${formData.amount} has been sent to ${formData.phoneNumber}. Please check your phone to complete the transaction.`,
       });
       
       // Reset form
@@ -46,7 +60,16 @@ export const PaymentFormSection: React.FC = () => {
         name: '',
         amount: '1000',
       });
-    }, 2000);
+    } catch (error) {
+      console.error('Payment error:', error);
+      toast({
+        title: "Payment Request Failed",
+        description: `There was an error processing your payment request. Please try again later.`,
+        variant: "destructive",
+      });
+    } finally {
+      setIsProcessing(false);
+    }
   };
 
   return (
@@ -163,4 +186,3 @@ export const PaymentFormSection: React.FC = () => {
     </div>
   );
 };
-

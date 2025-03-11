@@ -6,6 +6,7 @@ import { PaymentForm } from '../components/PaymentForm';
 import { SupportSection } from '../components/SupportSection';
 import { LanguageProvider } from '../contexts/LanguageContext';
 import { motion } from 'framer-motion';
+import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
   return (
@@ -30,6 +31,9 @@ const Index = () => {
           <PaymentForm />
           <SupportSection />
         </div>
+        
+        {/* Add the Toaster component for notifications */}
+        <Toaster />
       </Layout>
     </LanguageProvider>
   );
