@@ -10,16 +10,16 @@ export const SecurityInfoSection: React.FC = () => {
         <li className="flex space-x-3">
           <Shield size={20} className="text-sofitel-gold flex-shrink-0 mt-0.5" />
           <div>
-            <h5 className="font-medium text-sofitel-charcoal">Secure Encryption</h5>
-            <p className="text-sm text-sofitel-charcoal/70">All payment information is encrypted with industry-standard SSL/TLS.</p>
+            <h5 className="font-medium text-sofitel-charcoal">Secure Mobile Transaction</h5>
+            <p className="text-sm text-sofitel-charcoal/70">All mobile money transactions are encrypted and secured.</p>
           </div>
         </li>
         
         <li className="flex space-x-3">
           <Shield size={20} className="text-sofitel-gold flex-shrink-0 mt-0.5" />
           <div>
-            <h5 className="font-medium text-sofitel-charcoal">PCI Compliant</h5>
-            <p className="text-sm text-sofitel-charcoal/70">We adhere to Payment Card Industry Data Security Standards.</p>
+            <h5 className="font-medium text-sofitel-charcoal">PIN Protection</h5>
+            <p className="text-sm text-sofitel-charcoal/70">Your mobile money PIN is never shared with our system.</p>
           </div>
         </li>
         

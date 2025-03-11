@@ -2,40 +2,25 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { CreditCard, ArrowRight } from 'lucide-react';
+import { Phone, ArrowRight } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 
 export const PaymentFormSection: React.FC = () => {
   const { t } = useLanguage();
   const [isProcessing, setIsProcessing] = useState(false);
   const [formData, setFormData] = useState({
-    cardNumber: '',
-    expiryDate: '',
-    cvv: '',
-    nameOnCard: '',
+    phoneNumber: '',
+    provider: 'mtn',
+    name: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     let formattedValue = value;
     
-    // Format card number
-    if (name === 'cardNumber') {
-      formattedValue = value.replace(/\D/g, '').substring(0, 16);
-      formattedValue = formattedValue.replace(/(\d{4})(?=\d)/g, '$1 ');
-    }
-    
-    // Format expiry date
-    if (name === 'expiryDate') {
-      formattedValue = value.replace(/\D/g, '').substring(0, 4);
-      if (formattedValue.length > 2) {
-        formattedValue = formattedValue.replace(/^(\d{2})/, '$1/');
-      }
-    }
-    
-    // Format CVV
-    if (name === 'cvv') {
-      formattedValue = value.replace(/\D/g, '').substring(0, 3);
+    // Format phone number
+    if (name === 'phoneNumber') {
+      formattedValue = value.replace(/\D/g, '').substring(0, 10);
     }
     
     setFormData((prev) => ({ ...prev, [name]: formattedValue }));
@@ -49,16 +34,15 @@ export const PaymentFormSection: React.FC = () => {
     setTimeout(() => {
       setIsProcessing(false);
       toast({
-        title: "Payment Successful",
-        description: "Your bond payment has been processed successfully.",
+        title: "Payment Request Sent",
+        description: `Your mobile money payment request has been sent to ${formData.phoneNumber}. Please check your phone to complete the transaction.`,
       });
       
       // Reset form
       setFormData({
-        cardNumber: '',
-        expiryDate: '',
-        cvv: '',
-        nameOnCard: '',
+        phoneNumber: '',
+        provider: 'mtn',
+        name: '',
       });
     }, 2000);
   };
@@ -69,9 +53,9 @@ export const PaymentFormSection: React.FC = () => {
       
       <div className="flex items-center space-x-3 mb-8">
         <div className="p-2 bg-sofitel-navy/10 rounded-full">
-          <CreditCard size={24} className="text-sofitel-navy" />
+          <Phone size={24} className="text-sofitel-navy" />
         </div>
-        <h3 className="text-xl font-semibold text-sofitel-navy">Payment Details</h3>
+        <h3 className="text-xl font-semibold text-sofitel-navy">Mobile Money Payment</h3>
       </div>
       
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -89,74 +73,56 @@ export const PaymentFormSection: React.FC = () => {
         </div>
         
         <div className="space-y-2">
-          <label htmlFor="cardNumber" className="block text-sm font-medium text-sofitel-charcoal">
-            {t('cardNumber')}
+          <label htmlFor="provider" className="block text-sm font-medium text-sofitel-charcoal">
+            Mobile Money Provider
+          </label>
+          <select
+            id="provider"
+            name="provider"
+            value={formData.provider}
+            onChange={handleChange}
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sofitel-navy/30 focus:border-sofitel-navy transition-all"
+          >
+            <option value="mtn">MTN Mobile Money</option>
+            <option value="airtel">Airtel Money</option>
+          </select>
+        </div>
+        
+        <div className="space-y-2">
+          <label htmlFor="phoneNumber" className="block text-sm font-medium text-sofitel-charcoal">
+            Mobile Money Number
           </label>
           <input
             type="text"
-            id="cardNumber"
-            name="cardNumber"
-            value={formData.cardNumber}
+            id="phoneNumber"
+            name="phoneNumber"
+            value={formData.phoneNumber}
             onChange={handleChange}
-            placeholder="0000 0000 0000 0000"
+            placeholder="07XXXXXXXX"
             required
             className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sofitel-navy/30 focus:border-sofitel-navy transition-all"
           />
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="space-y-2">
-            <label htmlFor="expiryDate" className="block text-sm font-medium text-sofitel-charcoal">
-              {t('expiryDate')}
-            </label>
-            <input
-              type="text"
-              id="expiryDate"
-              name="expiryDate"
-              value={formData.expiryDate}
-              onChange={handleChange}
-              placeholder="MM/YY"
-              required
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sofitel-navy/30 focus:border-sofitel-navy transition-all"
-            />
-          </div>
-          
-          <div className="space-y-2">
-            <label htmlFor="cvv" className="block text-sm font-medium text-sofitel-charcoal">
-              {t('cvv')}
-            </label>
-            <input
-              type="text"
-              id="cvv"
-              name="cvv"
-              value={formData.cvv}
-              onChange={handleChange}
-              placeholder="123"
-              required
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sofitel-navy/30 focus:border-sofitel-navy transition-all"
-            />
-          </div>
-          
-          <div className="space-y-2 md:col-span-1">
-            <label htmlFor="nameOnCard" className="block text-sm font-medium text-sofitel-charcoal">
-              {t('nameOnCard')}
-            </label>
-            <input
-              type="text"
-              id="nameOnCard"
-              name="nameOnCard"
-              value={formData.nameOnCard}
-              onChange={handleChange}
-              placeholder="John Doe"
-              required
-              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sofitel-navy/30 focus:border-sofitel-navy transition-all"
-            />
-          </div>
+        <div className="space-y-2">
+          <label htmlFor="name" className="block text-sm font-medium text-sofitel-charcoal">
+            Full Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="John Doe"
+            required
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sofitel-navy/30 focus:border-sofitel-navy transition-all"
+          />
         </div>
         
         <div className="flex items-center space-x-2 text-sm text-sofitel-charcoal/60">
-          <CreditCard size={14} className="text-sofitel-gold" />
-          <span>Your payment information is encrypted and secure.</span>
+          <Phone size={14} className="text-sofitel-gold" />
+          <span>You will receive a prompt on your phone to complete the payment</span>
         </div>
         
         <motion.button
