@@ -9,7 +9,6 @@ export const PaymentForm: React.FC = () => {
   const { t } = useLanguage();
   const [isProcessing, setIsProcessing] = useState(false);
   const [formData, setFormData] = useState({
-    candidateId: '',
     cardNumber: '',
     expiryDate: '',
     cvv: '',
@@ -56,7 +55,6 @@ export const PaymentForm: React.FC = () => {
       
       // Reset form
       setFormData({
-        candidateId: '',
         cardNumber: '',
         expiryDate: '',
         cvv: '',
@@ -107,35 +105,17 @@ export const PaymentForm: React.FC = () => {
             </div>
             
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label htmlFor="candidateId" className="block text-sm font-medium text-sofitel-charcoal">
-                    {t('candidateId')}
-                  </label>
-                  <input
-                    type="text"
-                    id="candidateId"
-                    name="candidateId"
-                    value={formData.candidateId}
-                    onChange={handleChange}
-                    placeholder="SOF-2024-"
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-sofitel-navy/30 focus:border-sofitel-navy transition-all"
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="amount" className="block text-sm font-medium text-sofitel-charcoal">
-                    {t('amount')}
-                  </label>
-                  <input
-                    type="text"
-                    id="amount"
-                    value={`${t('currencyEuro')}${t('bondAmount')}`}
-                    disabled
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-sofitel-light text-sofitel-navy font-medium"
-                  />
-                </div>
+              <div className="space-y-2">
+                <label htmlFor="amount" className="block text-sm font-medium text-sofitel-charcoal">
+                  {t('amount')}
+                </label>
+                <input
+                  type="text"
+                  id="amount"
+                  value={`${t('currencyEuro')}${t('bondAmount')}`}
+                  disabled
+                  className="w-full px-4 py-3 rounded-lg border border-gray-200 bg-sofitel-light text-sofitel-navy font-medium"
+                />
               </div>
               
               <div className="space-y-2">
