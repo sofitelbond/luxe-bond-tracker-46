@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
@@ -11,7 +12,7 @@ export const AboutBondSection: React.FC = () => {
           with Sofitel Frankfurt Opera or if your application is unsuccessful.
         </p>
         <p className="text-sm text-sofitel-charcoal/80 mb-4">
-          You can choose to pay the full amount of UGX 3,982,000 or make a partial payment of UGX 1,991,000.
+          You can make partial payments of €500 each through our secure payment partner.
         </p>
         <p className="text-sm text-sofitel-charcoal/80">
           This bond serves as a commitment to your employment and helps us ensure that candidates 

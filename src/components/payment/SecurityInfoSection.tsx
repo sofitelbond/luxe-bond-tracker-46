@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Shield, Wallet } from 'lucide-react';
 
@@ -9,24 +10,24 @@ export const SecurityInfoSection: React.FC = () => {
         <li className="flex space-x-3">
           <Shield size={20} className="text-sofitel-gold flex-shrink-0 mt-0.5" />
           <div>
-            <h5 className="font-medium text-sofitel-charcoal">Secure Mobile Transaction</h5>
-            <p className="text-sm text-sofitel-charcoal/70">All mobile money transactions are encrypted and secured.</p>
+            <h5 className="font-medium text-sofitel-charcoal">Secure Payments</h5>
+            <p className="text-sm text-sofitel-charcoal/70">All transactions are encrypted and secured by our payment partner.</p>
           </div>
         </li>
         
         <li className="flex space-x-3">
           <Shield size={20} className="text-sofitel-gold flex-shrink-0 mt-0.5" />
           <div>
-            <h5 className="font-medium text-sofitel-charcoal">PIN Protection</h5>
-            <p className="text-sm text-sofitel-charcoal/70">Your mobile money PIN is never shared with our system.</p>
+            <h5 className="font-medium text-sofitel-charcoal">Data Protection</h5>
+            <p className="text-sm text-sofitel-charcoal/70">Your personal information is always secure and never shared with unauthorized parties.</p>
           </div>
         </li>
         
         <li className="flex space-x-3">
           <Wallet size={20} className="text-sofitel-gold flex-shrink-0 mt-0.5" />
           <div>
-            <h5 className="font-medium text-sofitel-charcoal">Flexible Payment Options</h5>
-            <p className="text-sm text-sofitel-charcoal/70">Choose between partial (UGX 1,991,000) or full (UGX 3,982,000) payment based on your preference.</p>
+            <h5 className="font-medium text-sofitel-charcoal">Flexible Payments</h5>
+            <p className="text-sm text-sofitel-charcoal/70">Make partial payments of €500 towards your €1,000 employment bond.</p>
           </div>
         </li>
         
